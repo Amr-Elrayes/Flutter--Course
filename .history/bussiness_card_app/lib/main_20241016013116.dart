@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp( const BussinesCard());
+  runApp( BussinesCard());
 }
 
 class BussinesCard extends StatelessWidget {
-  const BussinesCard({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: const Color(0xFF2B475E),
+        backgroundColor: Color(0xFF2B475E),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -131,10 +129,10 @@ class BussinesCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                     color: Colors.white,
                 ),
-                child: const Row(
+                child: Row(
                   children: [
                     Padding(
-                        padding: EdgeInsets.only(left: 12),
+                        padding: const EdgeInsets.only(left: 12),
                       child: ImageIcon(
                         AssetImage("assets/icons/linkedin.png"),
                         size: 35.0,
@@ -142,7 +140,7 @@ class BussinesCard extends StatelessWidget {
                       ),
                     ),
                       Padding(
-                        padding: EdgeInsets.only(left: 16),
+                        padding: const EdgeInsets.only(left: 16),
                         child: Text("Amr Elrayes",
                         style: TextStyle(
                           fontSize: 20,

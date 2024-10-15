@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp( const BussinesCard());
+  runApp( BussinesCard());
 }
 
 class BussinesCard extends StatelessWidget {
-  const BussinesCard({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: const Color(0xFF2B475E),
+        backgroundColor: Color(0xFF2B475E),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -30,8 +28,8 @@ class BussinesCard extends StatelessWidget {
               ),
               
             ),
-            const Padding(
-              padding: EdgeInsets.only(top: 5),
+            Padding(
+              padding: const EdgeInsets.only(top: 5),
               child: Text(
                 "Amr Elrayes",
                 style: TextStyle(
@@ -41,8 +39,8 @@ class BussinesCard extends StatelessWidget {
                 ),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(top: 5),
+            Padding(
+              padding: const EdgeInsets.only(top: 5),
               child: Text(
                 "Flutter Developer",
                 style: TextStyle(
@@ -52,8 +50,8 @@ class BussinesCard extends StatelessWidget {
                 ),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(top: 25),
+            Padding(
+              padding: const EdgeInsets.only(top: 25),
               child: Divider(
                 thickness: 0.5,
                 color: Color.fromARGB(255, 154, 152, 152),
@@ -69,10 +67,10 @@ class BussinesCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                     color: Colors.white,
                 ),
-                child: const Row(
+                child: Row(
                   children: [
                       Padding(
-                        padding: EdgeInsets.only(left: 12),
+                        padding: const EdgeInsets.only(left: 12),
                         child: Icon(
                           Icons.phone,
                           size: 34,
@@ -80,7 +78,7 @@ class BussinesCard extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(left: 16),
+                        padding: const EdgeInsets.only(left: 16),
                         child: Text("(+20) 1064575030",
                         style: TextStyle(
                           fontSize: 20,
@@ -100,10 +98,10 @@ class BussinesCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                     color: Colors.white,
                 ),
-                child: const Row(
+                child: Row(
                   children: [
                       Padding(
-                        padding: EdgeInsets.only(left: 12),
+                        padding: const EdgeInsets.only(left: 12),
                         child: Icon(
                           Icons.mail,
                           size: 34,
@@ -111,7 +109,7 @@ class BussinesCard extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(left: 16),
+                        padding: const EdgeInsets.only(left: 16),
                         child: Text("amrelrayes126@gmail.com",
                         style: TextStyle(
                           fontSize: 20,
@@ -131,10 +129,10 @@ class BussinesCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                     color: Colors.white,
                 ),
-                child: const Row(
+                child: Row(
                   children: [
                     Padding(
-                        padding: EdgeInsets.only(left: 12),
+                        padding: const EdgeInsets.only(left: 12),
                       child: ImageIcon(
                         AssetImage("assets/icons/linkedin.png"),
                         size: 35.0,
@@ -142,7 +140,7 @@ class BussinesCard extends StatelessWidget {
                       ),
                     ),
                       Padding(
-                        padding: EdgeInsets.only(left: 16),
+                        padding: const EdgeInsets.only(left: 16),
                         child: Text("Amr Elrayes",
                         style: TextStyle(
                           fontSize: 20,

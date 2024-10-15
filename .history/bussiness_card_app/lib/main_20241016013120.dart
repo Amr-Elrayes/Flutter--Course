@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp( const BussinesCard());
+  runApp( BussinesCard());
 }
 
 class BussinesCard extends StatelessWidget {
-  const BussinesCard({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: const Color(0xFF2B475E),
+        backgroundColor: Color(0xFF2B475E),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

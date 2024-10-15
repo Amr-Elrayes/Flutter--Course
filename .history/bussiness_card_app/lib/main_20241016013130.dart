@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp( const BussinesCard());
+  runApp( BussinesCard());
 }
 
 class BussinesCard extends StatelessWidget {
-  const BussinesCard({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
