@@ -21,7 +21,8 @@ Future<List<NewsModel>> getNews({required String category}) async {
   List<NewsModel> results = [];
   for(var x in articls)
   {
-    results.add(NewsModel(imglink: x['image_url'], title: x['title'], subtitle: x['description']));
+    NewsModel newsModel = NewsModel.fromJson(x); 
+    results.add(newsModel);
   }
   return results;
 }  catch (e) {
