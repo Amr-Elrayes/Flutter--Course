@@ -1,3 +1,5 @@
+import 'package:chat_app/Screens/chat_page.dart';
+import 'package:chat_app/Screens/login_page.dart';
 import 'package:chat_app/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +39,7 @@ class _SignupPageState extends State<SignupPage> {
             child: ListView(
               children: [
                 Image.asset(
-                  'assets/images/scholar.png',
+                  imgPath,
                   height: 120,
                 ),
                 Center(
@@ -88,6 +90,8 @@ class _SignupPageState extends State<SignupPage> {
                     password = value;
                   },
                   hintText: 'Password',
+                  obscureText: true,
+                  showEyeIcon: true,
                 ),
                 SizedBox(
                   height: 17,
@@ -100,6 +104,7 @@ class _SignupPageState extends State<SignupPage> {
                       setState(() {});
                       try {
                         await UserSignup();
+                        Navigator.pushReplacementNamed(context , ChatPage.id);
                         ShowSnackBar(context, 'Signup Successfully ✅');
                       } on FirebaseAuthException catch (e) {
                         if (e.code == 'weak-password') {
@@ -130,7 +135,7 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.pop(context);
+                        Navigator.pushReplacementNamed(context , LoginPage.id);
                       },
                       child: Text(
                         'Login',

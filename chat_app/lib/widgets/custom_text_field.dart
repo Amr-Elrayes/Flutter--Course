@@ -1,30 +1,70 @@
 import 'package:flutter/material.dart';
 
-// ignore: must_be_immutable
-class CustomFormTextField extends StatelessWidget {
-  CustomFormTextField({super.key, required this.hintText, this.onChanged});
+class CustomFormTextField extends StatefulWidget {
+  CustomFormTextField({
+    super.key,
+    required this.hintText,
+    this.onChanged,
+    this.obscureText = false,
+    this.showEyeIcon = false,
+  });
+
   final String hintText;
-  Function(String)? onChanged;
+  final Function(String)? onChanged;
+  final bool obscureText;
+  final bool showEyeIcon;
+
+
+  @override
+  _CustomFormTextFieldState createState() => _CustomFormTextFieldState();
+}
+
+class _CustomFormTextFieldState extends State<CustomFormTextField> {
+  late bool _isObscured;
+
+  @override
+  void initState() {
+    super.initState();
+    _isObscured = widget.obscureText;
+  }
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText: _isObscured,
       validator: (value) {
-        if (value!.isEmpty) {
-          return 'field is required';
+        if (value == null || value.isEmpty) {
+          return 'Field is required';
         }
+        return null;
       },
-      onChanged: onChanged,
+      style: const TextStyle(color: Colors.white),
+      cursorColor: Colors.white,
+      onChanged: widget.onChanged,
       decoration: InputDecoration(
-        hintText: hintText,
-        hintStyle: TextStyle(color: Colors.white),
-        focusedBorder: UnderlineInputBorder(
+        hintText: widget.hintText,
+        hintStyle: const TextStyle(color: Colors.white),
+        focusedBorder: const UnderlineInputBorder(
           borderSide: BorderSide(color: Colors.white),
         ),
-        enabledBorder: OutlineInputBorder(
+        enabledBorder: const OutlineInputBorder(
           borderSide: BorderSide(
             color: Colors.white,
           ),
         ),
+        suffixIcon: widget.showEyeIcon
+            ? IconButton(
+                onPressed: () {
+                  setState(() {
+                    _isObscured = !_isObscured;
+                  });
+                },
+                icon: Icon(
+                  _isObscured ? Icons.visibility_off : Icons.visibility,
+                  color: Colors.white,
+                ),
+              )
+            : null,
       ),
     );
   }

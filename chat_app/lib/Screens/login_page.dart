@@ -1,3 +1,4 @@
+import 'package:chat_app/Screens/chat_page.dart';
 import 'package:chat_app/Screens/signup_page.dart';
 import 'package:chat_app/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -38,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
             child: ListView(
               children: [
                 Image.asset(
-                  'assets/images/scholar.png',
+                  imgPath,
                   height: 120,
                 ),
                 Center(
@@ -83,6 +84,8 @@ class _LoginPageState extends State<LoginPage> {
                     password = data;
                   },
                   hintText: 'Password',
+                  obscureText: true,
+                  showEyeIcon: true,
                 ),
                 SizedBox(
                   height: 17,
@@ -95,7 +98,7 @@ class _LoginPageState extends State<LoginPage> {
                       setState(() {});
                       try {
                         await UserLogin();
-                        ShowSnackBar(context, 'Login Successfully ✅');
+                        Navigator.pushReplacementNamed(context , ChatPage.id , arguments: email);
                       } on FirebaseAuthException catch (e) {
                         if (e.code == 'user-not-found') {
                           ShowSnackBar(context, 'User Not Found');
@@ -126,7 +129,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, SignupPage.id);
+                        Navigator.pushReplacementNamed(context, SignupPage.id);
                       },
                       child: Text(
                         'Signup',
