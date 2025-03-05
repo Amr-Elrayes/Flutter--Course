@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../widgets/chat_bubble.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+// ignore: must_be_immutable
 class ChatPage extends StatelessWidget {
   static String id = 'ChatPage';
   final ScrollController _controller = ScrollController();
@@ -12,6 +13,8 @@ class ChatPage extends StatelessWidget {
       FirebaseFirestore.instance.collection(KmessageCollection);
 
   TextEditingController controller = TextEditingController();
+
+  ChatPage({super.key});
 
   @override
   Widget build(BuildContext context) {
