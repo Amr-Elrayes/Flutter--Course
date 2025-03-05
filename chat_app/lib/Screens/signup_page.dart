@@ -105,7 +105,6 @@ class _SignupPageState extends State<SignupPage> {
                       try {
                         await UserSignup();
                         Navigator.pushReplacementNamed(context , ChatPage.id);
-                        ShowSnackBar(context, 'Signup Successfully ✅');
                       } on FirebaseAuthException catch (e) {
                         if (e.code == 'weak-password') {
                           ShowSnackBar(context, 'Password is weak');
